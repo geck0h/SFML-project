@@ -21,8 +21,7 @@ public:
 
 private:
 	sf::Texture m_texture;
-	sf::Sprite m_sprite;
+	sf::Sprite m_sprite1, m_sprite2;
 	float m_acceleration;
-	// TODO: add so more rocks appear at once
 };
 
