@@ -60,7 +60,7 @@ void HittableObject::MoveObject(const float& speed)
 void HittableObject::ResetObject()
 {
 	m_sprite1.setPosition({ s_lanes[1].x - 90.0f, s_spawnLocationY });
-	m_sprite2.setPosition({ s_lanes[3].x - 90.0f, s_spawnLocationY });
+	m_sprite2.setPosition({ s_lanes[3].x - 90.0f, s_spawnLocationY - 100.0f });
 }
 
 void HittableObject::DrawObject(sf::RenderWindow& window)
