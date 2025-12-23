@@ -44,6 +44,15 @@ project("SFML-project")
             "sfml-window-d.lib"
         }
 
+        postbuildcommands
+        {
+            "{COPYFILE} %[%{wks.location}dlls/Debug/sfml-system-d-3.dll] %[%{wks.location}bin/" .. outputdir .. "/sfml-system-d-3.dll]",
+            "{COPYFILE} %[%{wks.location}dlls/Debug/sfml-graphics-d-3.dll] %[%{wks.location}bin/" .. outputdir .. "/sfml-graphics-d-3.dll]",
+            "{COPYFILE} %[%{wks.location}dlls/Debug/sfml-audio-d-3.dll] %[%{wks.location}bin/" .. outputdir .. "/sfml-audio-d-3.dll]",
+            "{COPYFILE} %[%{wks.location}dlls/Debug/sfml-network-d-3.dll] %[%{wks.location}bin/" .. outputdir .. "/sfml-network-d-3.dll]",
+            "{COPYFILE} %[%{wks.location}dlls/Debug/sfml-window-d-3.dll] %[%{wks.location}bin/" .. outputdir .. "/sfml-window-d-3.dll]"
+        }
+
     filter { "platforms:x64", "configurations:ReleaseDLL" }
         defines { "NDEBUG", "_CONSOLE", "_UNICODE", "UNICODE" }
         system ("Windows")
@@ -59,6 +68,16 @@ project("SFML-project")
             "sfml-network.lib",
             "sfml-window.lib"
         }
+
+        postbuildcommands
+        {
+            "{COPYFILE} %[%{wks.location}dlls/Release/sfml-system-3.dll] %[%{wks.location}bin/" .. outputdir .. "/sfml-system-3.dll]",
+            "{COPYFILE} %[%{wks.location}dlls/Release/sfml-graphics-3.dll] %[%{wks.location}bin/" .. outputdir .. "/sfml-graphics-3.dll]",
+            "{COPYFILE} %[%{wks.location}dlls/Release/sfml-audio-3.dll] %[%{wks.location}bin/" .. outputdir .. "/sfml-audio-3.dll]",
+            "{COPYFILE} %[%{wks.location}dlls/Release/sfml-network-3.dll] %[%{wks.location}bin/" .. outputdir .. "/sfml-network-3.dll]",
+            "{COPYFILE} %[%{wks.location}dlls/Release/sfml-window-3.dll] %[%{wks.location}bin/" .. outputdir .. "/sfml-window-3.dll]"
+        }
+
         
     filter {}
 
